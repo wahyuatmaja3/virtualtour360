@@ -66,24 +66,25 @@ Produk ini adalah platform aplikasi berbasis web (*web application*) interaktif 
 
 * **Pilihan 1: Tanpa Koding dari Nol (Software Berbayar / No-Code)**
     * Menggunakan perangkat lunak seperti **3DVista Virtual Tour** atau **Krpano**. Hasil ekspor berupa file HTML/JS statis yang bisa langsung di-host di server (cepat rilis, fitur sangat kaya).
-* **Pilihan 2: Pengembangan Mandiri Berbasis Kode (Open Source)**
-    * **Front-End:** React.js / Vue.js atau HTML5 Vanilla.
-    * **Library 360° engine:** **Pannellum** (sangat ringan, mudah untuk skala kecil) atau **Marzipano** (buatan Google, sangat optimal untuk gambar resolusi tinggi dengan sistem *tiling*).
-    * **Hosting/Penyimpanan:** AWS S3 / Google Cloud Storage (untuk menyimpan aset gambar besar) dikombinasikan dengan Cloudflare CDN agar pemuatan gambar dari berbagai lokasi menjadi super cepat.
+* **Pilihan 2: Pengembangan Mandiri Berbasis Kode (Open Source) - *DITERAPKAN***
+    * **Front-End:** HTML5 Vanilla + CSS (Mendukung Glassmorphism).
+    * **Backend:** Node.js (Express.js) untuk API server, menangani upload file, dan manajemen *scenes*.
+    * **Database:** SQLite untuk menyimpan konfigurasi panorama (metadata, pengaturan *scenes*) dan hotspot secara persisten.
+    * **Library 360° engine:** **Pannellum** (ringan dan mudah diintegrasikan).
+    * **Penyimpanan:** Aset gambar disimpan di lokal server (`/public/uploads`).
 
 ---
 
 ### 7. Alur Pengembangan & Rencana Fase (Roadmap)
 
 * **Fase 1: Minimum Viable Product (MVP)**
-    * Implementasi core viewer 360° menggunakan library pilihan (misal: Pannellum/Marzipano).
-    * Konfigurasi hardcoded untuk menghubungkan antar-ruangan via hotspot panah.
+    * Implementasi core viewer 360° menggunakan library pilihan (Pannellum).
     * Penambahan info spot dasar berupa teks dan gambar 2D.
     * Optimasi kompresi gambar agar website ringan.
 * **Fase 2: Interaktivitas Lanjutan**
     * Integrasi fitur Mini-Map / Denah dengan radar arah pandang.
     * Penambahan elemen audio latar (*background music*) atau audio narasi pada tiap titik ruangan.
     * Implementasi menu thumbnail di bagian bawah halaman.
-* **Fase 3: Otomatisasi & CMS**
-    * Pengembangan sistem backend dan database untuk menyimpan koordinat hotspot.
-    * Pembuatan dashboard admin agar proses input gambar 360° dan penataan konten info tidak perlu melalui koding manual lagi.
+* **Fase 3: Otomatisasi & CMS (Sedang Berjalan)**
+    * Pengembangan sistem backend (Node.js) dan database (SQLite) untuk menyimpan konfigurasi dan koordinat hotspot.
+    * Pembuatan dashboard admin agar proses input gambar 360° dan pengaturan antar-ruangan (scene) tidak perlu melalui koding manual lagi.
